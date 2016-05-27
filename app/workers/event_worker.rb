@@ -1,7 +1,9 @@
 class EventWorker
   include Sidekiq::Worker
+  sidekiq_options queue: :event
 
-  def perform(*args)
-    # Do something
+  def perform(id)
+    @event = Event.find(id)
+    @event.calculate_rank!
   end
 end
