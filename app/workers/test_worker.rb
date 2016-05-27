@@ -3,5 +3,6 @@ class TestWorker
 
   def perform(*args)
     # Do something
+    p 'work: title=' + title
   end
 end
