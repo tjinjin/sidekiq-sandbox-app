@@ -7,6 +7,10 @@ Rails.application.routes.draw do
 
   post 'home/show'
 
+  # sidekiq dashboard
+  require 'sidekiq/web'
+  mount Sidekiq::Web, at: "/sidekiq"
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
