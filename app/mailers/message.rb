@@ -5,9 +5,15 @@ class Message < ApplicationMailer
   #
   #   en.message.hello.subject
   #
-  def hello
-    @greeting = "Hi"
+  default from: "xxx"
 
-    mail to: "to@example.org"
+  def hello(name)
+    @name = name
+    mail(
+      to:       'yyy',
+      subject: 'Test',
+    ) do |format|
+      format.html
+    end
   end
 end
