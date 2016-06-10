@@ -49,3 +49,6 @@ group :development do
   gem 'spring'
 end
 
+# mailer
+gem 'aws-sdk-rails'
+gem 'figaro'
